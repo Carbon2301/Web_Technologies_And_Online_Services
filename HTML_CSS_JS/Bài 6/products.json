@@ -1,0 +1,6 @@
+[
+  { "name": "Rau má chua", "price": 20000, "desc": "100% rau má ép lạnh, không đường.", "category": "nguyen-chat" },
+  { "name": "Rau má sữa", "price": 25000, "desc": "Rau má phối sữa tươi, beo béo.", "category": "sua" },
+  { "name": "Rau má đậu xanh", "price": 25000, "desc": "Thơm bùi đậu xanh, mát lành.", "category": "dau-xanh" }
+]
+

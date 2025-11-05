@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <!-- Giải thích: Thẻ viewport giúp trang hiển thị tốt trên thiết bị di động -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cửa hàng bán nước rau má</title>
+</head>
+<body>
+  <!-- header: phần đầu trang, chứa tên cửa hàng và điều hướng cơ bản -->
+  <header>
+    <h1>Cửa hàng bán nước rau má</h1>
+    <!-- nav: điều hướng nội bộ tới các khu vực trong trang -->
+    <nav aria-label="Điều hướng chính">
+      <a href="#gioi-thieu">Giới thiệu</a> |
+      <a href="#san-pham">Sản phẩm</a> |
+      <a href="#lien-he">Liên hệ</a>
+    </nav>
+  </header>
+
+  <!-- main: nội dung chính của trang -->
+  <main>
+    <!-- section: giới thiệu ngắn về cửa hàng/slogan -->
+    <section id="gioi-thieu" aria-labelledby="tieu-de-gioi-thieu">
+      <h2 id="tieu-de-gioi-thieu">Giới thiệu</h2>
+      <p>Rau má tươi ép lạnh mỗi ngày — tươi, sạch, giữ trọn vị xanh.</p>
+    </section>
+
+    <!-- section: danh sách sản phẩm; mỗi sản phẩm là một article độc lập -->
+    <section id="san-pham" aria-labelledby="tieu-de-san-pham">
+      <h2 id="tieu-de-san-pham">Sản phẩm</h2>
+
+      <!-- article: sản phẩm 1 với tên, mô tả, giá -->
+      <article>
+        <!-- header trong article: tiêu đề sản phẩm -->
+        <header>
+          <h3>Rau má nguyên chất</h3>
+        </header>
+        <p>Mô tả: 100% rau má ép lạnh, không đường, vị thanh mát.</p>
+        <p>Giá: <span>20.000đ</span></p>
+        <!-- (Tuỳ chọn) Ảnh minh hoạ: có thể thay src bằng ảnh thực tế -->
+        <!-- <img src="https://via.placeholder.com/320x200?text=Rau+ma+nguyen+chat" alt="Rau má nguyên chất"> -->
+      </article>
+
+      <!-- article: sản phẩm 2 -->
+      <article>
+        <header>
+          <h3>Rau má sữa</h3>
+        </header>
+        <p>Mô tả: Rau má phối sữa tươi, beo béo dễ uống.</p>
+        <p>Giá: <span>25.000đ</span></p>
+        <!-- <img src="https://via.placeholder.com/320x200?text=Rau+ma+sua" alt="Rau má sữa"> -->
+      </article>
+
+      <!-- article: sản phẩm 3 -->
+      <article>
+        <header>
+          <h3>Rau má đậu xanh</h3>
+        </header>
+        <p>Mô tả: Thơm bùi đậu xanh, mát lành giải nhiệt.</p>
+        <p>Giá: <span>25.000đ</span></p>
+        <!-- <img src="https://via.placeholder.com/320x200?text=Rau+ma+dau+xanh" alt="Rau má đậu xanh"> -->
+      </article>
+    </section>
+
+    <!-- section: form đơn giản theo yêu cầu (tên, email, thông điệp, nút gửi) -->
+    <section id="lien-he" aria-labelledby="tieu-de-lien-he">
+      <h2 id="tieu-de-lien-he">Liên hệ</h2>
+      <!-- form: minh hoạ; action/method để trống vì không yêu cầu xử lý -->
+      <!-- Giải thích: Dùng label liên kết input qua for/id để tăng khả năng truy cập; dùng required cho trường bắt buộc -->
+      <form action="" method="">
+        <div>
+          <label for="name">Họ và tên</label><br>
+          <input id="name" name="name" type="text" required>
+        </div>
+
+        <div>
+          <label for="email">Email</label><br>
+          <input id="email" name="email" type="email" required>
+        </div>
+
+        <div>
+          <label for="message">Thông điệp</label><br>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+
+        <div>
+          <button type="submit">Gửi</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- footer: chân trang với thông tin ngắn gọn -->
+  <footer>
+    <p>© 2025 Cửa hàng bán nước rau má • 123 Đường Xanh, Quận Tươi</p>
+  </footer>
+</body>
+</html>

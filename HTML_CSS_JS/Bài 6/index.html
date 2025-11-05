@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cửa hàng bán nước rau má</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Cửa hàng bán nước rau má</h1>
+    <nav aria-label="Điều hướng chính">
+      <ul>
+        <li><a href="#gioi-thieu">Giới thiệu</a></li>
+        <li><a href="#san-pham">Sản phẩm</a></li>
+        <li><a href="#lien-he">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="gioi-thieu" aria-labelledby="tieu-de-gioi-thieu">
+      <h2 id="tieu-de-gioi-thieu">Giới thiệu</h2>
+      <p>Rau má tươi ép lạnh mỗi ngày — tươi, sạch, giữ trọn vị xanh.</p>
+    </section>
+
+    <section id="san-pham" aria-labelledby="tieu-de-san-pham">
+      <h2 id="tieu-de-san-pham">Sản phẩm</h2>
+
+      <div class="controls" aria-label="Tìm kiếm và thêm sản phẩm">
+        <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+        <input type="number" id="minPrice" placeholder="Giá từ" min="0" step="1000">
+        <input type="number" id="maxPrice" placeholder="Giá đến" min="0" step="1000">
+        <select id="sortBy" aria-label="Sắp xếp">
+          <option value="">Sắp xếp...</option>
+          <option value="name-asc">Tên (A→Z)</option>
+          <option value="name-desc">Tên (Z→A)</option>
+          <option value="price-asc">Giá (thấp→cao)</option>
+          <option value="price-desc">Giá (cao→thấp)</option>
+        </select>
+        <select id="categoryFilter" aria-label="Danh mục">
+          <option value="">Danh mục: Tất cả</option>
+          <option value="nguyen-chat">Nguyên chất</option>
+          <option value="sua">Sữa</option>
+          <option value="dau-xanh">Đậu xanh</option>
+        </select>
+        <button id="searchBtn" type="button">Lọc</button>
+        <button id="addProductBtn" type="button">Thêm sản phẩm</button>
+        <button id="clearStorageBtn" type="button">Xóa dữ liệu</button>
+        <button id="loadJsonBtn" type="button">Nạp từ JSON</button>
+      </div>
+
+      <!-- Form thêm sản phẩm (ẩn mặc định), có validate + lỗi + hủy -->
+      <form id="addProductForm" class="collapsible" action="" method="">
+        <h3>Thêm sản phẩm mới</h3>
+        <label for="newCategory">Danh mục:</label><br>
+        <select id="newCategory">
+          <option value="nguyen-chat">Nguyên chất</option>
+          <option value="sua">Sữa</option>
+          <option value="dau-xanh">Đậu xanh</option>
+        </select><br>
+
+        <label for="newName">Tên sản phẩm:</label><br>
+        <input type="text" id="newName" required><br>
+
+        <label for="newPrice">Giá:</label><br>
+        <input type="number" id="newPrice" min="1" step="1" required><br>
+
+        <label for="newDesc">Mô tả:</label><br>
+        <textarea id="newDesc" rows="3"></textarea><br>
+
+        <button type="submit">Thêm</button>
+        <button type="button" id="cancelBtn">Hủy</button>
+
+        <p id="errorMsg" class="error"></p>
+      </form>
+
+      <!-- Danh sách sản phẩm sẽ được tạo động từ LocalStorage -->
+      <div id="product-list">
+        <!-- Sản phẩm sẽ được tải từ LocalStorage hoặc khởi tạo mẫu -->
+      </div>
+    </section>
+
+    <section id="lien-he" aria-labelledby="tieu-de-lien-he">
+      <h2 id="tieu-de-lien-he">Liên hệ</h2>
+      <form action="" method="">
+        <div>
+          <label for="name">Họ và tên</label><br>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div>
+          <label for="email">Email</label><br>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div>
+          <label for="message">Thông điệp</label><br>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <div>
+          <button type="submit">Gửi</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Cửa hàng bán nước rau má • 123 Đường Xanh, Quận Tươi</p>
+  </footer>
+
+  <!-- Modal chi tiết sản phẩm -->
+  <div id="productModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-content">
+      <button class="modal-close" data-close="true" aria-label="Đóng">×</button>
+      <h3 id="modalTitle">Chi tiết sản phẩm</h3>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

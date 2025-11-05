@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cửa hàng bán nước rau má</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Cửa hàng bán nước rau má</h1>
+    <nav aria-label="Điều hướng chính">
+      <ul>
+        <li><a href="#gioi-thieu">Giới thiệu</a></li>
+        <li><a href="#san-pham">Sản phẩm</a></li>
+        <li><a href="#lien-he">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="gioi-thieu" aria-labelledby="tieu-de-gioi-thieu">
+      <h2 id="tieu-de-gioi-thieu">Giới thiệu</h2>
+      <p>Rau má tươi ép lạnh mỗi ngày — tươi, sạch, giữ trọn vị xanh.</p>
+    </section>
+
+    <section id="san-pham" aria-labelledby="tieu-de-san-pham">
+      <h2 id="tieu-de-san-pham">Sản phẩm</h2>
+
+      <!-- Khu điều khiển: tìm kiếm + thêm sản phẩm -->
+      <div class="controls" aria-label="Tìm kiếm và thêm sản phẩm">
+        <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+        <button id="searchBtn" type="button">Tìm</button>
+        <button id="addProductBtn" type="button">Thêm sản phẩm</button>
+      </div>
+
+      <!-- Form thêm sản phẩm (ẩn mặc định bằng .hidden) -->
+      <form id="addProductForm" class="hidden" action="" method="">
+        <div>
+          <label for="pName">Tên sản phẩm</label><br>
+          <input id="pName" name="pName" type="text" required>
+        </div>
+        <div>
+          <label for="pDesc">Mô tả</label><br>
+          <textarea id="pDesc" name="pDesc" rows="3" required></textarea>
+        </div>
+        <div>
+          <label for="pPrice">Giá (đ)</label><br>
+          <input id="pPrice" name="pPrice" type="text" required>
+        </div>
+        <div>
+          <button type="submit">Thêm vào danh sách</button>
+        </div>
+      </form>
+
+      <!-- Danh sách sản phẩm -->
+      <div id="product-list">
+        <article class="product-item">
+          <header><h3 class="product-name">Rau má nguyên chất</h3></header>
+          <p>Mô tả: 100% rau má ép lạnh, không đường, vị thanh mát.</p>
+          <p>Giá: <span class="price">20.000đ</span></p>
+        </article>
+
+        <article class="product-item">
+          <header><h3 class="product-name">Rau má sữa</h3></header>
+          <p>Mô tả: Rau má phối sữa tươi, beo béo dễ uống.</p>
+          <p>Giá: <span class="price">25.000đ</span></p>
+        </article>
+
+        <article class="product-item">
+          <header><h3 class="product-name">Rau má đậu xanh</h3></header>
+          <p>Mô tả: Thơm bùi đậu xanh, mát lành giải nhiệt.</p>
+          <p>Giá: <span class="price">25.000đ</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="lien-he" aria-labelledby="tieu-de-lien-he">
+      <h2 id="tieu-de-lien-he">Liên hệ</h2>
+      <form action="" method="">
+        <div>
+          <label for="name">Họ và tên</label><br>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div>
+          <label for="email">Email</label><br>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div>
+          <label for="message">Thông điệp</label><br>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <div>
+          <button type="submit">Gửi</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Cửa hàng bán nước rau má • 123 Đường Xanh, Quận Tươi</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
