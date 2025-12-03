@@ -37,6 +37,50 @@ app.post('/api/students', async (req, res) => {
   }
 });
 
+// API GET một học sinh theo ID
+app.get('/api/students/:id', async (req, res) => {
+  try {
+    const student = await Student.findById(req.params.id);
+    if (!student) {
+      return res.status(404).json({ error: "Student not found" });
+    }
+    res.json(student);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+// API PUT cập nhật học sinh
+app.put('/api/students/:id', async (req, res) => {
+  try {
+    const updatedStu = await Student.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    if (!updatedStu) {
+      return res.status(404).json({ error: "Student not found" });
+    }
+    res.json(updatedStu);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+// API DELETE xóa học sinh
+app.delete('/api/students/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    const deleted = await Student.findByIdAndDelete(id);
+    if (!deleted) {
+      return res.status(404).json({ error: "Student not found" });
+    }
+    res.json({ message: "Đã xóa học sinh", id: deleted._id });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // Khởi động server
 app.listen(PORT, () => {
   console.log(`Server đang chạy tại http://localhost:${PORT}`);
