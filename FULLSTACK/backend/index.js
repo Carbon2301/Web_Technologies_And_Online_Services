@@ -27,6 +27,16 @@ app.get('/api/students', async (req, res) => {
   }
 });
 
+// API POST thêm học sinh mới
+app.post('/api/students', async (req, res) => {
+  try {
+    const newStudent = await Student.create(req.body);
+    res.status(201).json(newStudent);
+  } catch (e) {
+    res.status(400).json({ error: e.message });
+  }
+});
+
 // Khởi động server
 app.listen(PORT, () => {
   console.log(`Server đang chạy tại http://localhost:${PORT}`);
